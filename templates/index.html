@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags-->
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="Colorlib Templates" />
+    <meta name="author" content="Colorlib" />
+    <meta name="keywords" content="Colorlib Templates" />
+
+    <!-- Title Page-->
+    <title>Au Register Forms by Colorlib</title>
+
+    <!-- Icons font CSS-->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='vendor/mdi-font/css/material-design-iconic-font.min.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='vendor/font-awesome-4.7/css/font-awesome.min.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='vendor/select2/select2.min.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='vendor/datepicker/daterangepicker.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}">
+   
+  </head>
+
+  <body>
+    <div class="page-wrapper bg-gra-02 p-t-130 p-b-100 font-poppins">
+      <div class="wrapper wrapper--w680">
+        <div class="card card-4">
+          <div class="card-body">
+            <h2 class="title">Formula AI Hack - 2022 - Weather Prediction</h2>
+
+            <form method="POST" id='form'>
+              <div class="row row-space">
+                <div class="col-2">
+                  <div class="input-group">
+                    <label class="label">M_Weather</label>
+                    <div class="rs-select2 js-select-simple select--no-search">
+                      <select name="m_weather" id="opt_m_weather">
+                        <option disabled="disabled" selected="selected">
+                          Choose Weather
+                        </option>
+                        <option value="0">W-0: Clear</option>
+                        <option value="1">W-1: Light Cloud</option>
+                        <option value="2">W-2: Overcast</option>
+                        <option value="5">W-5: Storm</option>
+                      </select>
+                      <div class="select-dropdown"></div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-2">
+                  <div class="input-group">
+                    <label class="label">M_RAIN_PERCENTAGE</label>
+                    <input
+                      id="txt_m_rain_percentage"
+                      class="input--style-4"
+                      type="text"
+                      name="m_rain_percentage"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="row row-space">
+                <div class="col-2">
+                  <div class="input-group">
+                    <label class="label">M_AIRM_AIR_TEMPERATURE</label>
+                    <input
+                      id="txt_m_airm_air_temperature"
+                      class="input--style-4"
+                      type="text"
+                      name="m_airm_air_temperature"
+                    />
+                  </div>
+                </div>
+                <div class="col-2">
+                  <div class="input-group">
+                    <label class="label">M_TRACK_TEMPERATURE</label>
+                    <input
+                      id="txt_m_track_temperature"
+                      class="input--style-4"
+                      type="text"
+                      name="m_track_temperature"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="input-group">
+                <label class="label">M_TRACK_ID</label>
+                <div class="rs-select2 js-select-simple select--no-search">
+                  <select name="subject" id="opt_m_track_id">
+                    <option disabled="disabled" selected="selected">
+                      Choose option
+                    </option>
+                    <option value="1">Track 1</option>
+                    <option value="2">Track 2</option>
+                    <option value="3">Track 3 </option>
+                    <option value="4">Track 4</option>
+                    <option value="5">Track 5</option>
+                    <option value="7">Track 7</option>
+                    <option value="11">Track 11</option>
+                    <option value="15">Track 15</option>
+                    <option value="18">Track 18</option>
+                    <option value="19">Track 19</option>
+                    <option value="26">Track 26</option>
+                    <option value="27">Track 27</option>
+                    <option value="28">Track 28</option>
+                  </select>
+                  <div class="select-dropdown"></div>
+                </div>
+              </div>
+              <div class="p-t-15">
+                <button class="btn btn--radius-2 btn--blue" id='btn-submit' type="button">
+                  PREDICT
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Jquery JS-->
+    <script src="{{ url_for('static', filename="vendor/jquery/jquery.min.js") }}"></script>
+    
+    <!-- Vendor JS-->
+    <script src="{{ url_for('static', filename="vendor/select2/select2.min.js") }}"></script>
+    <script src="{{ url_for('static', filename="vendor/datepicker/moment.min.js") }}"></script>
+    <script src="{{ url_for('static', filename="vendor/datepicker/daterangepicker.js") }}"></script>
+
+    <!-- Main JS-->
+    <script src="{{ url_for('static', filename="js/global.js") }}"></script>
+    <script src="{{ url_for('static', filename="js/app.js") }}"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  </body>
+  <!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>
+<!-- end document-->
