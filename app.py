@@ -4,7 +4,7 @@ from flask_cors import CORS
 import numpy as np
 import pandas as pd
 from sklearn.preprocessing import StandardScaler
-from tensorflow.keras.models import load_model
+from tensorflow.keras.models import load_model, Model
 
 
 
@@ -22,10 +22,9 @@ trainX = pd.read_csv('trainX_to fit_scaler.csv')
 train_X_temp = trainX.to_numpy()
 train_X_temp[:, 1] /= 100.
 scaler_X = StandardScaler()
-# scaler_X = MinMaxScaler()
 scaler_X = scaler_X.fit(train_X_temp[:, 3:])
-loaded_model = load_model('models/model.h5')
-# output([1, 2, 3, 4, 5])
+loaded_model = load_model('models/model.h5', custom_objects={'Functional':Model})
+# # predict([1, 2, 3, 4, 5])
 
 
 
@@ -66,51 +65,51 @@ def predict():
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    # exp_years = float(request.form['exp_years'])
-    # model = load_model('models/model.h5')
-    # model.predict([])
-    
-    # result = int(model.predict([[exp_years]])[0])
-    
-    # data = [
-    #     int(request.form['m_weather']),
-    #     # float(request.from['M_RAIN_PERCENTAGE']),
-    #     # float(request.from['M_AIRM_AIR_TEMPERATURE']),
-    #     # float(request.from['M_TRACK_TEMPERATURE']),
-    #     # int(request.from['M_TRACK_ID'])
-    # ]
-    return 'Hiiiiiiiii'   + str(data)
-    
-    print("Moving Forward...")
-    return 'Hiiiiiiiii'
-    # return render_template("index.html")
-
-
 if __name__ == "__main__":
     app.run()
     # app.run(port=5000)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    # # exp_years = float(request.form['exp_years'])
+    # # model = load_model('models/model.h5')
+    # # model.predict([])
+    
+    # # result = int(model.predict([[exp_years]])[0])
+    
+    # # data = [
+    # #     int(request.form['m_weather']),
+    # #     # float(request.from['M_RAIN_PERCENTAGE']),
+    # #     # float(request.from['M_AIRM_AIR_TEMPERATURE']),
+    # #     # float(request.from['M_TRACK_TEMPERATURE']),
+    # #     # int(request.from['M_TRACK_ID'])
+    # # ]
+    # return 'Hiiiiiiiii'   + str(data)
+    
+    # print("Moving Forward...")
+    # return 'Hiiiiiiiii'
+    # # return render_template("index.html")
+

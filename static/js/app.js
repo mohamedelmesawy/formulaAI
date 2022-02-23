@@ -15,8 +15,6 @@ window.onload = function() {
             'opt_m_track_id': $('#opt_m_track_id').val()
         }
 
-        var value = "Ahmed"
-        // var value = $('.textbox').val();
         $.ajax({
             type: 'POST',
             url: "/predict",
@@ -25,7 +23,17 @@ window.onload = function() {
             success: function(result){
                 console.log(result)
                 // do something with the received data
-            }
+                Swal.fire({
+                    title: 'Prediction',
+                    text: result,
+                    showClass: {
+                      popup: 'animate__animated animate__fadeInDown'
+                    },
+                    hideClass: {
+                      popup: 'animate__animated animate__fadeOutUp'
+                    }
+                  })
+            },
         });
 
 
