@@ -25,7 +25,7 @@ window.onload = function() {
                 // do something with the received data
                 Swal.fire({
                     title: 'Prediction',
-                    text: result,
+                    text: JSON.stringify(result),
                     showClass: {
                       popup: 'animate__animated animate__fadeInDown'
                     },
