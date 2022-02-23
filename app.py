@@ -16,15 +16,13 @@ CORS(app, support_credentials=True)
 
 N_FUTURE  = 1
 N_PAST    = 4
-# print('trainX shape == {}.'.format(trainX.shape))
-# trainX shape == (1428, 5)
+
 trainX = pd.read_csv('trainX_to fit_scaler.csv')
 train_X_temp = trainX.to_numpy()
 train_X_temp[:, 1] /= 100.
 scaler_X = StandardScaler()
 scaler_X = scaler_X.fit(train_X_temp[:, 3:])
-loaded_model = load_model('models/model.h5', custom_objects={'Functional':Model})
-# # predict([1, 2, 3, 4, 5])
+loaded_model = load_model('models/model.h5')
 
 
 
@@ -58,58 +56,12 @@ def predict():
         y1, y2 = loaded_model.predict(X_predict)
         new_record = np.array([np.argmax(y1), np.round(y2[0][0], 2)] + list(X_predict[2:]))
         if str(i) in keys:
-            dict_output[str(i)] = { 'type':np.argmax(y1), str(np.argmax(y1)): np.round(y2[0][0], 2) }
-            
-    return dict_output
+            dict_output[str(i)] = { 'type':str(np.argmax(y1)), str(np.argmax(y1)): str(np.round(y2[0][0], 2)) }
+
+    return str(dict_output)
 
 
 
 
 if __name__ == "__main__":
     app.run()
-    # app.run(port=5000)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    # # exp_years = float(request.form['exp_years'])
-    # # model = load_model('models/model.h5')
-    # # model.predict([])
-    
-    # # result = int(model.predict([[exp_years]])[0])
-    
-    # # data = [
-    # #     int(request.form['m_weather']),
-    # #     # float(request.from['M_RAIN_PERCENTAGE']),
-    # #     # float(request.from['M_AIRM_AIR_TEMPERATURE']),
-    # #     # float(request.from['M_TRACK_TEMPERATURE']),
-    # #     # int(request.from['M_TRACK_ID'])
-    # # ]
-    # return 'Hiiiiiiiii'   + str(data)
-    
-    # print("Moving Forward...")
-    # return 'Hiiiiiiiii'
-    # # return render_template("index.html")
-
